@@ -122,11 +122,13 @@ class Lists extends React.Component {
         return (
             <div className="lists">
                 <div>
+                
                     <NameForm
                     onSubmit = {(text) => this.addItem(text)}
                     />
                 </div>
                 <div className="to-do">
+                    To Do
                     <ToDo 
                     
                     items = {toDo}
@@ -135,6 +137,7 @@ class Lists extends React.Component {
                 </div>
                 <br/>
                 <div className='done'>
+                    Done
                     <ToDo 
                     
                     items = {done}
