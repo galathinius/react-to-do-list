@@ -1,0 +1,41 @@
+body {
+    font: 14px "Century Gothic", Futura, sans-serif;
+    margin: 20px;
+  }
+  
+  ol, ul {
+    padding-left: 30px;
+  }
+  
+  
+  .kbd-navigation .square:focus {
+    background: #ddd;
+  }
+
+  .to-do {
+    background: rgb(165, 192, 250);
+  }
+  .lists {
+    padding: 3px;
+    width: 40%;
+  }
+
+  .done {
+    background: rgb(144, 243, 210);
+  }
+  
+  .list {
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .flex-item {
+    flex: 0 1 auto;
+    margin: 3px;
+  }
+  
+  .game-info {
+    margin-left: 20px;
+  }
+  
