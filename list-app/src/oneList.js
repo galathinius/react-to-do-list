@@ -1,37 +1,25 @@
 import React from 'react';
+import {ListItem} from './oneItem'
 
+export const ToDo = (props) =>{
 
-function ListItem (props) {
-    return (
-        <button 
-            className="flex-item" 
-            onClick = {props.onClick}>
-                { props.value }
-        </button>
-    );
-}
-  
-export class ToDo extends React.Component {
-
-    renderListItem(index) {
+    const renderListItem = (index) => {
       return (<ListItem 
-        key = {this.props.items[index].id}
-        value = {this.props.items[index].text}
-        onClick = {() => this.props.onClick(this.props.items[index].id)}
+        key = {props.items[index].id}
+        value = {props.items[index]}
         />
       );
     }    
-  
-    render() {     
-        const rows = this.props.items.map((item, index) => {
-            return this.renderListItem(index)
-        })
         
-        return (
-            <div className='list'>
-                {rows}
-            </div>
-            
-        );
-    }
+    const rows = props.items.map((item, index) => {
+        return renderListItem(index)
+    })
+    
+    return (
+        <div className='list'>
+            {rows}
+        </div>
+        
+    );
+    
 }

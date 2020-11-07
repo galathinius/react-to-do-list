@@ -1,4 +1,12 @@
 import React from 'react';
+import { connect } from "react-redux";
+import { addArticle } from "./redux/actions/index";
+
+function mapDispatchToProps(dispatch) {
+  return {
+    addArticle: article => dispatch(addArticle(article))
+  };
+}
 
 export class NameForm extends React.Component {
     constructor(props) {
@@ -12,7 +20,8 @@ export class NameForm extends React.Component {
   
     handleSubmit(event) {
       event.preventDefault();
-      this.props.onSubmit(this.state.value)
+      this.props.addArticle( this.state.value );
+      this.setState({ value: "" });
     }
   
     render() {
@@ -27,3 +36,8 @@ export class NameForm extends React.Component {
       );
     }
   }
+
+export const Form = connect(
+    null,
+    mapDispatchToProps
+  )(NameForm);
